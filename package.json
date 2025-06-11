@@ -1,0 +1,32 @@
+{
+  "name": "grid-layout",
+  "version": "1.0.0",
+  "main": "index.js",
+  "jest": {
+    "testEnvironment": "jsdom",
+    "reporters": [
+      "default",
+      "<rootDir>/congrats-reporter.js"
+    ]
+  },
+  "scripts": {
+    "test:items": "jest --noStackTrace --verbose container-basic",
+    "test:container": "jest --noStackTrace --verbose containerProperties ",
+    "test:webpage": "jest --noStackTrace --verbose webpage ",
+    "test": "jest --noStackTrace --verbose",
+    "test:watch": "jest --watchAll",
+    "container": "live-server containerProperties",
+    "item": "live-server itemsProperties",
+    "container-basic": "live-server container-basic",
+    "grid-area-placement": "live-server grid-area-placement"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^30.0.0-beta.3",
+    "live-server": "^1.2.2"
+  }
+}
