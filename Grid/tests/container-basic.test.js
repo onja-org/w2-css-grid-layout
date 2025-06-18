@@ -2,114 +2,90 @@
  * @jest-environment jsdom
  */
 
+
 const fs = require('fs');
 const path = require('path');
 
+
 beforeEach(() => {
+    // Initialize the matchMedia mock
+    // Clear the document first
+    document.documentElement.innerHTML = '';
+
+    // Load real HTML
     const html = fs.readFileSync(path.resolve(__dirname, '../container-basic/index.html'), 'utf8');
     document.documentElement.innerHTML = html;
+
+    // Load real CSS
     const css = fs.readFileSync(path.resolve(__dirname, '../container-basic/style-grid.css'), 'utf8');
     const styleTag = document.createElement('style');
     styleTag.textContent = css;
     document.head.appendChild(styleTag);
 });
 
+function expectStyleMatchIgnoringSpaces(received, expected) {
+    expect(received.replace(/\s/g, '')).toBe(expected.replace(/\s/g, ''));
+}
 
-/**
- * @jest-environment jsdom
- */
+describe('Responsive Grid CSS layout', () => {
+    test('wrapper has correct base grid styles', () => {
+        const wrapper = document.querySelector(".wrapper");
+        expect(wrapper).not.toBeNull();
 
-describe('Grid CSS layout', () => {
-    let wrapper, header, nav, sidebar, main, advertising, footer;
-
-    beforeEach(() => {
-        // Create wrapper div and set styles (simulate .wrapper CSS)
-        wrapper = document.createElement('div');
-        wrapper.className = 'wrapper';
-        wrapper.style.display = 'grid';
-        wrapper.style.gridTemplateColumns = 'repeat(6, 1fr)';
-        wrapper.style.gap = '20px';
-
-        // Create child elements and apply grid positioning styles
-        header = document.createElement('header');
-        header.style.gridColumn = '2 / 7';
-
-        nav = document.createElement('nav');
-        nav.style.gridColumn = '4 / 6';
-        nav.style.gridRow = '2 / 4';
-
-        sidebar = document.createElement('aside');
-        sidebar.className = 'sidebar';
-        sidebar.style.gridColumn = '1 / 2';
-        sidebar.style.gridRow = '1 / 5';
-
-        main = document.createElement('main');
-        main.style.gridColumn = '2 / 6';
-        main.style.gridRow = '2 / 4';
-
-        advertising = document.createElement('aside');
-        advertising.className = 'advertising';
-        advertising.style.gridColumn = '6 / 7';
-        advertising.style.gridRow = '2 / 4';
-
-        footer = document.createElement('footer');
-        footer.style.gridColumn = '2 / 7';
-
-        // Append all children to wrapper
-        wrapper.appendChild(header);
-        wrapper.appendChild(nav);
-        wrapper.appendChild(sidebar);
-        wrapper.appendChild(main);
-        wrapper.appendChild(advertising);
-        wrapper.appendChild(footer);
-
-        // Append wrapper to document body (so getComputedStyle works properly)
-        document.body.appendChild(wrapper);
-    });
-
-    afterEach(() => {
-        // Cleanup
-        document.body.innerHTML = '';
-    });
-
-    test('wrapper has correct grid container styles', () => {
         const styles = window.getComputedStyle(wrapper);
         expect(styles.display).toBe('grid');
-        expect(styles.gridTemplateColumns).toBe('repeat(6, 1fr)');
-        expect(styles.gap).toBe('20px');
+        expect(styles.gridTemplateColumns).toBe('1fr 2fr 1fr');
+        expect(styles.gridTemplateRows).toBe('1fr 1fr 3fr 1fr 1fr 2fr');
+        expect(styles.backgroundColor).toBe('rgb(234, 242, 227)');
+        expect(styles.boxSizing).toBe('border-box');
+        expect(styles.height).toBe('100vh');
     });
 
-    test('header has correct grid-column', () => {
+    test('header occupies correct grid area', () => {
+        const header = document.querySelector(".header");
+        expect(header).not.toBeNull();
         const styles = window.getComputedStyle(header);
-        expect(styles.gridColumn).toBe('2 / 7');
+        expectStyleMatchIgnoringSpaces(styles.gridColumn, '1 / 4');
+        expectStyleMatchIgnoringSpaces(styles.gridRow, '1 / 2');
     });
 
-    test('nav has correct grid-column and grid-row', () => {
-        const styles = window.getComputedStyle(nav);
-        expect(styles.gridColumn).toBe('4 / 6');
-        expect(styles.gridRow).toBe('2 / 4');
+    test('menu has correct grid placement on desktop', () => {
+        const menu = document.querySelector(".menu");
+        expect(menu).not.toBeNull();
+        const styles = window.getComputedStyle(menu);
+        expectStyleMatchIgnoringSpaces(styles.gridColumn, '1 / 2');
+        expectStyleMatchIgnoringSpaces(styles.gridRow, '2 / 4');
     });
 
-    test('sidebar has correct grid-column and grid-row', () => {
-        const styles = window.getComputedStyle(sidebar);
-        expect(styles.gridColumn).toBe('1 / 2');
-        expect(styles.gridRow).toBe('1 / 5');
-    });
-
-    test('main has correct grid-column and grid-row', () => {
+    test('main section grid placement on desktop', () => {
+        const main = document.querySelector(".main");
+        expect(main).not.toBeNull();
         const styles = window.getComputedStyle(main);
-        expect(styles.gridColumn).toBe('2 / 6');
-        expect(styles.gridRow).toBe('2 / 4');
+        expectStyleMatchIgnoringSpaces(styles.gridColumn, '2 / 3');
+        expectStyleMatchIgnoringSpaces(styles.gridRow, '2 / 6');
     });
 
-    test('advertising has correct grid-column and grid-row', () => {
-        const styles = window.getComputedStyle(advertising);
-        expect(styles.gridColumn).toBe('6 / 7');
-        expect(styles.gridRow).toBe('2 / 4');
+    test('ad1 placement on desktop', () => {
+        const ad1 = document.querySelector(".ad1");
+        expect(ad1).not.toBeNull();
+        const styles = window.getComputedStyle(ad1);
+        expectStyleMatchIgnoringSpaces(styles.gridColumn, '3 / 4');
+        expectStyleMatchIgnoringSpaces(styles.gridRow, '2 / 6');
     });
 
-    test('footer has correct grid-column', () => {
+    test('ad2 placement on desktop', () => {
+        const ad2 = document.querySelector(".ad2");
+        expect(ad2).not.toBeNull();
+        const styles = window.getComputedStyle(ad2);
+        expectStyleMatchIgnoringSpaces(styles.gridColumn, '1 / 2');
+        expectStyleMatchIgnoringSpaces(styles.gridRow, '4 / 6');
+    });
+
+    test('footer placement on desktop', () => {
+        const footer = document.querySelector(".footer");
+        expect(footer).not.toBeNull();
         const styles = window.getComputedStyle(footer);
-        expect(styles.gridColumn).toBe('2 / 7');
+        expectStyleMatchIgnoringSpaces(styles.gridColumn, '1 / 4');
+        expectStyleMatchIgnoringSpaces(styles.gridRow, '6 / 7');
     });
 });
