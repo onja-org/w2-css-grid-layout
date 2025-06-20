@@ -24,6 +24,8 @@ This means:
 
 ---
 
+![line-grid](/assets/items/line.png)
+
 ### Understanding `span` in grid-column
 
 You can also use the `span` keyword to make an item **span (cover)** multiple columns without specifying the exact end line.
@@ -42,6 +44,8 @@ This means:
 
 ---
 
+![line-grid](/assets/items/span.png)
+
 ### Using `grid-column-start` and `grid-column-end`
 
 You can set the start and end lines separately:
@@ -56,7 +60,7 @@ You can set the start and end lines separately:
 This means the same as `grid-column: 2 / 5`.
 
 ---
-
+![start-end-grid-column](/assets/items/span.png)
 ## 2. grid-row
 
 The `grid-row` property works just like `grid-column` but controls vertical placement (top to bottom).
@@ -76,6 +80,8 @@ This means:
 
 ---
 
+![grid-row](/assets/items/grid-row.png)
+
 ### Understanding `span` in grid-row
 
 Example:
@@ -92,6 +98,8 @@ This means:
 
 ---
 
+![grid-row-span](/assets/items/grid-row-span.png)
+
 ### Using `grid-row-start` and `grid-row-end`
 
 ```css
@@ -104,6 +112,8 @@ This means:
 This means the same as `grid-row: 2 / 4`.
 
 ---
+
+![grid-row-start-end](/assets/items/grid-row-span.png)
 
 ## 3. grid-area (using line numbers)
 
@@ -133,7 +143,7 @@ This is equivalent to:
   grid-column-end: 4;
 }
 ```
-
+![grid-area](/assets/items/grid-area.png)
 ---
 
 ## 4. grid-area (using named areas)
@@ -226,4 +236,4 @@ Example:
 
 ---
 
-If you want, I can also help create a simple example file or explanation with diagrams to clarify how lines and spans work visually!
+That wraps up our full lesson on CSS Grid Items! You’ve now learned how to control the position and alignment of grid items using powerful properties like grid-column, grid-row, grid-area, and alignment tools like justify-self and align-self. These tools help you place items exactly where you want them inside a grid layout. Keep practicing, and you’ll be able to build clean, responsive layouts with confidence. Great job making it to the end! 🎉
