@@ -11,7 +11,7 @@ class CongratsReporter {
 
       if (filePath.includes("container-basic.test.js")) {
         groups.containerBasic.push(testResult);
-      } else if (filePath.includes("itemsproperties.test.js")) {
+      } else if (filePath.includes("grid-area.test.js")) {
         groups.gridArea.push(testResult);
       }
     }

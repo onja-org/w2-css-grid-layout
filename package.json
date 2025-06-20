@@ -10,15 +10,12 @@
     ]
   },
   "scripts": {
-    "test:items": "jest --noStackTrace --verbose container-basic",
-    "test:container": "jest --noStackTrace --verbose containerProperties ",
-    "test:webpage": "jest --noStackTrace --verbose webpage ",
+    "test:basic": "jest --noStackTrace --verbose container-basic",
+    "test:area": "jest --noStackTrace --verbose grid-area ",
     "test": "jest --noStackTrace --verbose",
     "test:watch": "jest --watchAll",
-    "container": "live-server containerProperties",
-    "item": "live-server itemsProperties",
     "container-basic": "live-server container-basic",
-    "grid-area-placement": "live-server grid-area-placement"
+    "grid-area": "live-server grid-area"
   },
   "keywords": [],
   "author": "",
