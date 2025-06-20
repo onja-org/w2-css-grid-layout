@@ -1,0 +1,166 @@
+/* ----------------------------- CONTAINER ----------------------------- */
+
+.wrapper {
+    display: grid;
+
+    /* 🔧 TASK: Define grid-template-areas for desktop view.
+       Layout should follow this structure:
+       - header spans full width
+       - nav on the left of advertising
+       - sidebar left of main and advertising
+       - footer spans full width
+    */
+    /* grid-template-areas: ; */
+    /* your code here */
+
+    gap: 20px;
+}
+
+/*----------------------------- ITEMS -------------------------------------*/
+
+/* 🔧 TASK: Assign each element its correct grid-area name. 
+   Use the same name used in the grid-template-areas.
+*/
+
+header {
+    /* your code here */
+}
+
+nav {
+    /* your code here */
+}
+
+aside.sidebar {
+    /* your code here */
+}
+
+main {
+    /* your code here */
+}
+
+aside.advertising {
+    /* your code here */
+}
+
+footer {
+    /* your code here */
+}
+
+
+
+/* INSTRUCTIONS: 
+       1. UNCOMMENT the CSS code below 
+       2. STUDY the code structure: 
+        - This is a media query that activates when screen width ≤ 50em 
+        - It redefines grid-template-areas to stack elements vertically 
+        - Each section gets assigned to its corresponding grid area 3. 
+        TEST the responsive behavior: 
+        - Shrink your browser window to less than 50em wide (~800px) 
+        - Compare the layout before and after uncommenting 
+        - Notice how it transforms to a mobile-friendly single-column layout QUESTIONS TO CONSIDER: 
+        - How does the order in grid-template-areas affect visual layout? 
+        - Why is vertical stacking better for mobile devices? 
+        - What's the difference between desktop and mobile layouts? 
+
+HINT: Resize your browser window to see the layout reorganize !*/
+
+@media screen and (max-width : 50em) {
+
+    /* .wrapper {
+        grid-template-areas:
+            'header'
+            'nav'
+            'sidebar'
+            'main'
+            'advertising'
+            'footer'
+        ;
+    }
+
+    header {
+        grid-area: header;
+    }
+
+    nav {
+        grid-area: nav;
+    }
+
+    aside.sidebar {
+        grid-area: sidebar;
+    }
+
+    main {
+        grid-area: main;
+    }
+
+    aside.advertising {
+        grid-area: advertising;
+    }
+
+    footer {
+        grid-area: footer;
+    } */
+}
+
+
+/*
+=== TABLET LAYOUT CSS GRID EXERCISE ===
+
+INSTRUCTIONS:
+1. UNCOMMENT the CSS code below (remove the at the beginning and at the end)
+2. STUDY the code structure:
+   - This is a media query that activates between 30em and 49.99em wide (tablet range)
+   - It creates a 2-column layout with grid-template-columns: 4fr 2fr
+   - The sidebar takes up the right column while other content stacks in the left
+   - Notice the 20px gap between grid items
+3. TEST the responsive behavior:
+   - Resize your browser window to between 30em-50em wide (~480px-800px)
+   - Compare this layout to both mobile (single column) and desktop versions
+   - Notice how the sidebar becomes a permanent right column
+
+QUESTIONS TO CONSIDER:
+- Why does the sidebar get its own column in tablet view?
+- How does the 4fr 2fr ratio affect the column widths?
+- What's the advantage of this hybrid layout for medium-sized screens?
+- How does this differ from the mobile layout (single column)?
+
+HINT: This creates a "tablet-optimized" layout that's between mobile and desktop!
+*/
+
+@media screen and (min-width: 30em) and (max-width: 49.99em) {
+    /* .wrapper {
+        display: grid;
+        grid-template-columns: 4fr 2fr;
+        grid-template-areas:
+            'header sidebar'
+            'nav sidebar'
+            'main sidebar'
+            'advertising sidebar'
+            'footer sidebar';
+        gap: 20px;
+    }
+
+    header {
+        grid-area: header;
+    }
+
+    nav {
+        grid-area: nav;
+    }
+
+    aside.sidebar {
+        grid-area: sidebar;
+    }
+
+    main {
+        grid-area: main;
+    }
+
+    aside.advertising {
+        grid-area: advertising;
+    }
+
+    footer {
+        grid-area: footer;
+    } */
+}
