@@ -75,6 +75,8 @@ grid-template-columns: 1fr 2fr;
 
 ---
 
+![grid-culumn](/assets/container/grid-column.png)
+
 ## ✅ `grid-template-rows`
 Defines the number and size of **rows**.
 
@@ -87,6 +89,8 @@ Defines the number and size of **rows**.
 ➡️ Creates 2 rows, first is 50px, second is 100px.
 
 ---
+
+![grid-row](/assets/container/grid.png)
 
 ## ✅ `gap`, `row-gap`, `column-gap`
 Sets spacing **between** grid items.
@@ -101,10 +105,12 @@ You can also use separately:
 
 ```css
 row-gap: 10px;
-column-gap: 20px;
+column-gap: 10px;
 ```
 
 ---
+
+![grid-gap](/assets/container/grid-gap.png)
 
 ## ✅ `justify-items`
 Aligns items **horizontally** (left to right) **inside their cells**.
