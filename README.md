@@ -137,3 +137,6 @@ Chrome 57+, Firefox 52+, Safari 10.1+, Edge 16+
 **Remember**: Read lessons first → Complete exercises → Test your work
 
 Happy coding! 🎉
+
+💡 **Additional Resources**  
+ For more comprehensive CSS Grid lessons, visit: [learncssgrid.com](https://learncssgrid.com/#grid-container)
