@@ -14,8 +14,8 @@
     "test:area": "jest --noStackTrace --verbose grid-area ",
     "test": "jest --noStackTrace --verbose",
     "test:watch": "jest --watchAll",
-    "container-basic": "live-server container-basic",
-    "grid-area": "live-server grid-area"
+    "container-basic": "live-server Grid/container-basic",
+    "grid-area": "live-server Grid/grid-area"
   },
   "keywords": [],
   "author": "",

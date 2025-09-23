@@ -40,19 +40,15 @@ This lab teaches you **CSS Grid fundamentals** through hands-on exercises. By th
 
 ## Getting Started
 
-### Prerequisites
-- Basic HTML/CSS knowledge
-- Node.js installed (for testing and live server)
-- Modern web browser (Chrome 57+, Firefox 52+, Safari 10.1+)
-
 ### Setup Steps
 ```bash
+cd lab
 # 1. Install dependencies
 npm install
 
 # 2. Start with lessons (use VS Code preview)
-# Read Grid/Lesson/grid-container-lesson.md first
-# Then read Grid/Lesson/css-grid-items-full-lesson.md
+# Read lesson/grid-container-lesson.md first
+# Then read lesson/css-grid-items-full-lesson.md
 
 # 3. Run exercises with live server
 npm run container-basic    # Exercise 1
@@ -96,59 +92,6 @@ npm test              # Run all tests
 # Continuous testing
 npm run test:watch    # Auto-run tests on file changes
 ```
-
----
-
-## Testing Strategy
-
-### Manual Testing Checklist
-- [ ] **Desktop view** (> 850px): Complex multi-column layout
-- [ ] **Tablet view** (500-850px): Reorganized layout
-- [ ] **Mobile view** (< 500px): Single-column stack
-- [ ] **Smooth transitions** between breakpoints
-- [ ] **No overlapping elements** at any screen size
-- [ ] **Content readability** on all devices
-
-### Automated Testing
-The lab includes Jest tests that verify:
-- Grid container setup (`display: grid`)
-- Column/row definitions
-- Element positioning (`grid-column`, `grid-row`)
-- Named grid areas implementation
-- Responsive behavior
-
----
-
-## Exercise Details
-
-### Exercise 1: Container Basic
-**Layout Goal**: Classic website layout with header, sidebar, main content, ads, and footer
-
-**Grid Structure**:
-- **3 columns**: `1fr 2fr 1fr` (sidebar, main, sidebar)
-- **6 rows**: `1fr 1fr 3fr 1fr 1fr 2fr` (header, nav, content, continuation, bottom, footer)
-
-**Responsive Breakpoints**:
-- **850px**: Reorganize for tablet screens
-- **500px**: Single-column mobile layout
-
-**Key Learning**: Grid line positioning, responsive design patterns
-
----
-
-### Exercise 2: Grid Area
-**Layout Goal**: Semantic layout using named grid areas
-
-**Grid Areas**:
-```css
-grid-template-areas:
-  "header header header"
-  "nav nav nav"
-  "sidebar main advertising"
-  "footer footer footer";
-```
-
-**Key Learning**: Named grid areas, semantic CSS, layout abstraction
 
 ---
 
