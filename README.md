@@ -1,142 +1,217 @@
-# W2 CSS Grid Layout
+# CSS Grid Layout Lab - Overview
 
-Learn CSS Grid through hands-on exercises and responsive design practices.
+## Learning Objectives
 
-## 🚀 Setup Instructions
+This lab teaches you **CSS Grid fundamentals** through hands-on exercises. By the end, you'll be able to:
+
+- Create responsive grid layouts using CSS Grid
+- Position elements using grid lines and grid areas
+- Build complex layouts with named grid areas
+- Implement responsive breakpoints for mobile-first design
+- Debug and test grid layouts effectively
+
+---
+
+## Lab Structure
+
+### **Lesson Materials** (`lesson/`)
+1. **`grid-container-lesson.md`** - Comprehensive guide to CSS Grid containers
+   - Grid terminology (lines, tracks, areas, cells)
+   - Container properties (`display: grid`, `grid-template-columns/rows`, `gap`, etc.)
+   - Layout alignment and positioning
+
+2. **`css-grid-items-full-lesson.md`** - Deep dive into grid item positioning
+   - `grid-column` and `grid-row` properties
+   - Using `span` keyword for multi-column/row items
+   - Grid area positioning techniques
+
+### **Hands-on Exercises**
+1. **Container Basic** (`lab/Grid/container-basic/`)
+   - **Focus**: Grid containers, responsive layout
+   - **File to edit**: `style-grid.css`
+   - **Skills**: Basic grid setup, positioning with grid lines
+
+2. **Grid Area** (`lab/Grid/grid-area/`)
+   - **Focus**: Named grid areas, complex layouts
+   - **File to edit**: `style-grid-area.css`
+   - **Skills**: `grid-template-areas`, semantic layout naming
+
+---
+
+## Getting Started
 
 ### Prerequisites
-- Modern web browser
-- Text editor (VS Code recommended)
 - Basic HTML/CSS knowledge
-- Node.js and npm installed
+- Node.js installed (for testing and live server)
+- Modern web browser (Chrome 57+, Firefox 52+, Safari 10.1+)
 
-### Installation
-1. Open the project folder in your code editor
-2. Run `npm install` to install dependencies
-3. You're ready to start!
-
-### How to Run the Code
-**Option 1: Live Server (Recommended)**
+### Setup Steps
 ```bash
-# Run container-basic exercise
-npm run container-basic
+# 1. Install dependencies
+npm install
 
-# Run grid-area exercise  
-npm run grid-area
+# 2. Start with lessons (use VS Code preview)
+# Read Grid/Lesson/grid-container-lesson.md first
+# Then read Grid/Lesson/css-grid-items-full-lesson.md
+
+# 3. Run exercises with live server
+npm run container-basic    # Exercise 1
+npm run grid-area         # Exercise 2
 ```
 
-**Option 2: Manual**
-- Navigate to `Grid/container-basic/` or `Grid/grid-area/`
-- Open `index.html` in your browser
+---
 
-## 📁 Project Structure
+## Learning Workflow
 
-```
-w2-css-grid-layout/
-├── assets/
-│   ├── container/
-│   └── items/
-├── Grid/
-│   ├── container-basic/        # Exercise 1
-│   │   ├── index.html
-│   │   ├── style-grid.css      ← YOU EDIT THIS
-│   │   └── styles-core.css
-│   ├── grid-area/              # Exercise 2
-│   │   ├── index.html
-│   │   ├── style-grid-area.css ← YOU EDIT THIS
-│   │   └── styles-core.css
-│   ├── Lesson/                 # Read these first
-│   │   ├── css-grid-items-full-lesson.md
-│   │   └── grid-container-lesson.md
-│   └── tests/
-│       ├── container-basic.test.js
-│       └── grid-area.test.js
-```
+### Phase 1: Study
+1. **Read lessons first** - Use VS Code markdown preview
+2. **Take notes** on key Grid concepts:
+   - Grid container vs grid items
+   - Grid lines, tracks, areas, cells
+   - `fr` units vs fixed units
+   - Named grid areas
 
-## 📚 Learning Steps
+### Phase 2: Practice
+1. **Exercise 1: Container Basic**
+   - Uncomment CSS properties as instructed
+   - Set up 3-column, 6-row grid layout
+   - Position header, menu, main content, ads, footer
+   - Test responsive breakpoints (850px, 500px)
 
-### Step 1: Read the Lessons
-1. Go to `Lesson/` folder
-2. **Preview** `grid-container-lesson.md` first (use VS Code preview or markdown viewer)
-3. Then **preview** `css-grid-items-full-lesson.md`
-4. Take notes on key concepts while reading
+2. **Exercise 2: Grid Area**
+   - Define semantic grid areas
+   - Use `grid-template-areas` for layout
+   - Position elements using `grid-area` property
 
-**💡 Tip**: In VS Code, right-click the .md file and select "Open Preview" for better formatting
-
-### Step 2: Complete Exercises
-
-#### Exercise 1: Container Basic
-- **File**: `Grid/container-basic/style-grid.css`
-- **Learn**: Grid containers, columns/rows, responsive design
-- **Task**: Uncomment code, modify properties, test in browser
-- **Run**: `npm run container-basic` (live server)
-
-#### Exercise 2: Grid Area
-- **File**: `Grid/grid-area/style-grid-area.css`  
-- **Learn**: Named grid areas, complex layouts
-- **Task**: Define grid areas, position elements
-- **Run**: `npm run grid-area` (live server)
-
-### Step 3: Test Your Work
-
-#### Manual Testing
-- Resize browser window to test responsiveness
-- Check layouts on different screen sizes
-
-#### Automated Testing
-**After completing each exercise, run these commands to test your code:**
-
+### Phase 3: Validate
 ```bash
-# Test container-basic exercise
-npm run test:basic
+cd lab
+# Test individual exercises
+npm run test:basic    # Tests container-basic
+npm run test:area     # Tests grid-area
 
-# Test grid-area exercise
-npm run test:area
+# Test everything
+npm test              # Run all tests
 
-# Test all exercises
-npm test
-
-# Watch mode (runs tests automatically on file changes)
-npm run test:watch
+# Continuous testing
+npm run test:watch    # Auto-run tests on file changes
 ```
 
-## 🧪 Testing Guidelines
+---
 
-**Screen Size Testing**:
-- Desktop: > 800px wide
-- Tablet: 480px - 800px wide
-- Mobile: < 480px wide
+## Testing Strategy
 
-**Visual Checklist**:
-- ✅ Grid items properly aligned
-- ✅ Responsive breakpoints work
-- ✅ No overlapping elements
-- ✅ Mobile-friendly layout
+### Manual Testing Checklist
+- [ ] **Desktop view** (> 850px): Complex multi-column layout
+- [ ] **Tablet view** (500-850px): Reorganized layout
+- [ ] **Mobile view** (< 500px): Single-column stack
+- [ ] **Smooth transitions** between breakpoints
+- [ ] **No overlapping elements** at any screen size
+- [ ] **Content readability** on all devices
 
-## 🔧 Common Issues
+### Automated Testing
+The lab includes Jest tests that verify:
+- Grid container setup (`display: grid`)
+- Column/row definitions
+- Element positioning (`grid-column`, `grid-row`)
+- Named grid areas implementation
+- Responsive behavior
 
-| Problem | Solution |
-|---------|----------|
+---
+
+## Exercise Details
+
+### Exercise 1: Container Basic
+**Layout Goal**: Classic website layout with header, sidebar, main content, ads, and footer
+
+**Grid Structure**:
+- **3 columns**: `1fr 2fr 1fr` (sidebar, main, sidebar)
+- **6 rows**: `1fr 1fr 3fr 1fr 1fr 2fr` (header, nav, content, continuation, bottom, footer)
+
+**Responsive Breakpoints**:
+- **850px**: Reorganize for tablet screens
+- **500px**: Single-column mobile layout
+
+**Key Learning**: Grid line positioning, responsive design patterns
+
+---
+
+### Exercise 2: Grid Area
+**Layout Goal**: Semantic layout using named grid areas
+
+**Grid Areas**:
+```css
+grid-template-areas:
+  "header header header"
+  "nav nav nav"
+  "sidebar main advertising"
+  "footer footer footer";
+```
+
+**Key Learning**: Named grid areas, semantic CSS, layout abstraction
+
+---
+
+## Common Issues & Solutions
+
+| **Problem** | **Solution** |
+|-------------|--------------|
 | Grid not displaying | Add `display: grid` to container |
 | Items not positioning | Check grid-area name spelling |
 | Responsive not working | Verify media query syntax |
 | CSS not loading | Check file paths in HTML |
-
-## 💻 Browser Support
-Chrome 57+, Firefox 52+, Safari 10.1+, Edge 16+
-
-## 🎯 What You'll Learn
-- CSS Grid fundamentals
-- Responsive grid layouts  
-- Grid area positioning
-- Mobile-first design
-- Layout debugging
+| Overlapping elements | Review grid line numbers (start at 1) |
+| Tests failing | Ensure exact property values match requirements |
 
 ---
 
-**Remember**: Read lessons first → Complete exercises → Test your work
+## Responsive Design Patterns
 
-Happy coding! 🎉
+### Desktop First → Mobile
+1. **Desktop**: Complex multi-column layouts
+2. **Tablet**: Reorganized content prioritizing readability
+3. **Mobile**: Single-column stack for touch interaction
 
-💡 **Additional Resources**  
- For more comprehensive CSS Grid lessons, visit: [learncssgrid.com](https://learncssgrid.com/#grid-container)
+### Content Priority Order
+1. Header (branding/navigation)
+2. Main content (primary focus)
+3. Navigation menu
+4. Supplementary content (ads, sidebar)
+5. Footer (secondary info)
+
+---
+
+## Success Criteria
+
+### Technical Mastery
+- [ ] All automated tests pass (`npm test`)
+- [ ] Clean, commented CSS code
+- [ ] Proper use of Grid properties
+- [ ] Responsive breakpoints working correctly
+
+### Understanding Check
+- [ ] Can explain grid lines vs grid tracks vs grid areas
+- [ ] Understands `fr` units and their benefits
+- [ ] Can implement responsive grid layouts from scratch
+- [ ] Knows when to use CSS Grid vs Flexbox
+
+---
+
+## Next Steps
+
+After completing this lab:
+1. **Practice**: Build your own grid layouts
+2. **Explore**: Advanced Grid features (subgrid, masonry)
+3. **Combine**: Use Grid with Flexbox for complex designs
+4. **Real-world**: Apply to actual projects
+
+### Additional Resources
+- [CSS Grid Garden](https://cssgridgarden.com/) - Interactive game
+- [Grid by Example](https://gridbyexample.com/) - Practical examples
+- [Learn CSS Grid](https://learncssgrid.com/) - Comprehensive guide
+
+---
+
+**Happy Grid Learning!**
+
+*Remember: CSS Grid is about structure and layout. Start with the big picture, then refine the details.*
