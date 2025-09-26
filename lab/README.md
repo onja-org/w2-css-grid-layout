@@ -12,7 +12,7 @@ Learn CSS Grid through hands-on exercises and responsive design practices.
 
 ### Installation
 1. Open the project folder in your code editor
-2. Run `npm install` to install dependencies
+2. Run `npm install` from the root directory to install dependencies
 3. You're ready to start!
 
 ### How to Run the Code
@@ -33,30 +33,34 @@ npm run grid-area
 
 ```
 w2-css-grid-layout/
-├── assets/
-│   ├── container/
-│   └── items/
-├── Grid/
-│   ├── container-basic/        # Exercise 1
-│   │   ├── index.html
-│   │   ├── style-grid.css      ← YOU EDIT THIS
-│   │   └── styles-core.css
-│   ├── grid-area/              # Exercise 2
-│   │   ├── index.html
-│   │   ├── style-grid-area.css ← YOU EDIT THIS
-│   │   └── styles-core.css
-│   ├── Lesson/                 # Read these first
-│   │   ├── css-grid-items-full-lesson.md
-│   │   └── grid-container-lesson.md
-│   └── tests/
-│       ├── container-basic.test.js
-│       └── grid-area.test.js
+├── lesson/                     # Read these first
+│   ├── css-grid-items-full-lesson.md
+│   └── grid-container-lesson.md
+├── lab/
+│   ├── assets/
+│   │   ├── container/
+│   │   └── items/
+│   ├── Grid/
+│   │   ├── container-basic/        # Exercise 1
+│   │   │   ├── index.html
+│   │   │   ├── style-grid.css      ← YOU EDIT THIS
+│   │   │   └── styles-core.css
+│   │   ├── grid-area/              # Exercise 2
+│   │   │   ├── index.html
+│   │   │   ├── style-grid-area.css ← YOU EDIT THIS
+│   │   │   └── styles-core.css
+│   │   └── tests/
+│   │       ├── container-basic.test.js
+│   │       └── grid-area.test.js
+│   └── congrats-reporter.js
+├── package.json
+└── README.md
 ```
 
 ## 📚 Learning Steps
 
 ### Step 1: Read the Lessons
-1. Go to `Lesson/` folder
+1. Go to the root `lesson/` folder
 2. **Preview** `grid-container-lesson.md` first (use VS Code preview or markdown viewer)
 3. Then **preview** `css-grid-items-full-lesson.md`
 4. Take notes on key concepts while reading

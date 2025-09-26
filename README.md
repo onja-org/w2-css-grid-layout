@@ -42,7 +42,6 @@ This lab teaches you **CSS Grid fundamentals** through hands-on exercises. By th
 
 ### Setup Steps
 ```bash
-cd lab
 # 1. Install dependencies
 npm install
 
@@ -81,7 +80,6 @@ npm run grid-area         # Exercise 2
 
 ### Phase 3: Validate
 ```bash
-cd lab
 # Test individual exercises
 npm run test:basic    # Tests container-basic
 npm run test:area     # Tests grid-area
